@@ -302,6 +302,231 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/11/wave-file-20200511/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="F.D.Kang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Phoenix">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/05/11/wave-file-20200511/" itemprop="url">伤损系统智能回放波形文件20200511升级</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-11T11:36:55+08:00">
+                2020-05-11
+              </time>
+            
+
+            
+
+            
+          </span>
+          <span>
+                |
+              <span>更新于</span>
+              <time>
+                2020-05-11
+                11:36:55
+              </time>
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/asc/" itemprop="url" rel="index">
+                    <span itemprop="name">asc</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2020/05/11/wave-file-20200511/" class="leancloud_visitors" data-flag-title="伤损系统智能回放波形文件20200511升级">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+                 
+                |
+                <span class="post-meta-item-text">最近 </span>
+                <span class="leancloud-updated-at"></span>
+                </span>
+                        
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          伤损系统智能回放波形文件升级文档
+日期：20200511
+
+
+作者：康凤德
+
+波形文件业务代码
+代码所属项目为Rail Defects Service Schedules
+
+
+新增java代码类为:
+
+12345Rail Defects Service Schedules/trunk/src/main/java/com/crmec/rail/playback/access/IWaveFileAccess.javaRail Defects Service Schedules/trunk/src/main/java/com/crmec/rail/playback/access/impl/WaveFileAccessImpl.javaRail Defects Service Schedules/trunk/src/main/java/com/crmec/rail/playback/service/WaveFileService.javaRail Defects Service Schedules/trunk/src/main/java/com/crmec/rail/playback/entity/WaveFile.javaRail Defects Service Schedules/trunk/src/main/java/com/crmec/rail/playback/qco/WaveFileQco.java
+
+修改java代码类为:
+
+1Rail Defects Service Schedules/trunk/src/main/java/com/crmec/rail/playback/service/DailyReportDetailVerifyService.java
+移动端接口代码
+代码所属项目为Mobile Device Service Interface
+
+
+修改java代码类为:
+
+123Mobile Device Service Interface/trunk/src/main/java/com/crmec/service/pad/service/FileUploadService.javaMobile Device Service Interface/trunk/src/main/java/com/crmec/service/pad/action/FileUploadAction.javaMobile Device Service Interface/trunk/src/main/java/com/crmec/service/pad/service/PadDataLogService.java
+
+修改配置文件为:1Mobile Device Service Interface/trunk/WebRoot/WEB-INF/config/spring/service-config.xml
+
+
+伤损应用端代码
+代码所属项目为Rail Defects Application
+
+
+新增java代码类为:
+
+1Rail Defects Application/trunk/src/main/java/com/crmec/raildefects/action/WaveFileAction.java
+
+修改java代码类为:
+
+1Rail Defects Application/trunk/src/main/java/com/crmec/raildefects/action/WaveFileAction.java
+
+新增json文件为:
+
+1Rail Defects Application/trunk/WebRoot/WEB-INF/designs/module/mSchedules/mSchedules.upWaveFileList.json
+
+修改json文件为:
+
+1Rail Defects Application/trunk/WebRoot/WEB-INF/designs/module/mSchedules/mSchedules.json
+
+新增jsp文件为:
+
+123Rail Defects Application/trunk/WebRoot/WEB-INF/jsp/app/mSchedules/waveFile/waveFileListRes.jspRail Defects Application/trunk/WebRoot/WEB-INF/jsp/app/mSchedules/waveFile/waveFileList.jspRail Defects Application/trunk/WebRoot/WEB-INF/jsp/app/mSchedules/waveFile/waveFileListTop.jsp
+
+修改配
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/05/11/wave-file-20200511/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/23/asc20200401/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -868,7 +1093,7 @@ More info: Deployment
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -890,7 +1115,7 @@ More info: Deployment
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1388,7 +1613,7 @@ More info: Deployment
       else if (!isArchive && !isCategory && !isTag) { //is index page
         var titles = [] //array to titles
 
-        var postsstr = 'titles.push("ASC平台升级说明文档");titles.push("Hexo之NexT主题搭建博客详细过程");titles.push("Hello World");' //if you have a better way to get titles of posts, please change it
+        var postsstr = 'titles.push("伤损系统智能回放波形文件20200511升级");titles.push("ASC平台升级说明文档");titles.push("Hexo之NexT主题搭建博客详细过程");titles.push("Hello World");' //if you have a better way to get titles of posts, please change it
         eval(postsstr)
 
         var promises = titles.map(function (title) {

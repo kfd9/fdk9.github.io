@@ -4,6 +4,30 @@
 
     
   <url>
+    <loc>http://yoursite.com/2020/05/11/wave-file-20200511/</loc>
+    <lastmod>2020-05-11T03:02:05.280Z</lastmod>
+    <data>
+        <display>
+        <title>伤损系统智能回放波形文件20200511升级</title>
+        <pubTime>2020-05-11T03:36:55.000Z</pubTime>
+        
+        <tag>asc</tag>
+         
+        <tag>rdms</tag>
+         
+        <tag>js</tag>
+         
+         
+           
+             
+              <breadCrumb title="asc" url="http://yoursite.com/categories/asc/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2020/04/23/asc20200401/</loc>
     <lastmod>2020-04-28T03:19:00.549Z</lastmod>
     <data>
@@ -13,9 +37,9 @@
         
         <tag>asc</tag>
          
-        <tag>java</tag>
-         
         <tag>js</tag>
+         
+        <tag>java</tag>
          
          
            
