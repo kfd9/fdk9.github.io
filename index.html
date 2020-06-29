@@ -302,6 +302,202 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/29/asc20200629/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="F.D.Kang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Phoenix">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/06/29/asc20200629/" itemprop="url">ASC平台升级说明文档</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-29T15:36:55+08:00">
+                2020-06-29
+              </time>
+            
+
+            
+
+            
+          </span>
+          <span>
+                |
+              <span>更新于</span>
+              <time>
+                2020-06-29
+                15:36:55
+              </time>
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/asc/" itemprop="url" rel="index">
+                    <span itemprop="name">asc</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2020/06/29/asc20200629/" class="leancloud_visitors" data-flag-title="ASC平台升级说明文档">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+                 
+                |
+                <span class="post-meta-item-text">最近 </span>
+                <span class="leancloud-updated-at"></span>
+                </span>
+                        
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          ASC平台升级说明文档
+日期:：2020年4月21日
+
+
+作者：F.D.Kang/Z.Z.Mo
+注意：由于本次ASC平台升级在根项目的pom.xml增加了一些参数配置，在各个项目的根parent的pom.xml文件里最好采用和asc平台不一样的groupId，否则造成平台jar包依赖的根parent变成了项目的根parent，会找不到asc平台定义的相关参数
+
+1. 升级前的准备1.1. 版本号
+统一规定ASC平台本次升级版本号为1.1.202001
+
+
+本次升级的ASC平台所有jar包版本统一规定如下
+
+├── ASC Platform - 1.1.202001│   ├── ASC Basic - 1.1.202001│   │   ├── Mixky Toolkit - 1.1.202001│   │   ├── Mixky Database Access - 1.1.202001│   ├── ASC Commons - 1.1.202001│   │   ├── Platform Commons - Base - 1.1.202001│   │   ├── Platform Commons - Core - 1.1.202001│   │   ├── Platform Commons - DirectJngine - 1.1.202001│   │   ├── Platform Commons - Engine - 1.1.202001│   │   ├── Platform Commons - Esb - 1.1.202001│   │   ├── Platform Commons - Workflow - 1.1.202001│   ├── ASC Facade - 1.1.202001│   │   ├── Application Framework - 1.1.202001│   │   ├── Central Authentication Service - 1.1.202001│   ├── ASC Applications - 1.1.202001│   │   ├── Platform Base Service│   │   ├── Platform Manager│   │   ├── Application Developer│   │   ├── Application Portal│   ├── ASC Module Applications│   │   ├── Demo Application
+
+所有的平台依赖jar包版本统一为1.1.202001
+
+
+各个项目升级前需要把依赖的平台相关jar包全部改为1.1.202001
+
+1.2. 代理仓库配置
+在项目的根目录里的pom.xml配置代理仓库，配置好修改完版本号即可自动从代理仓库下载版本号为1.1.202001的jar包，配置如下：
+
+1234567891011121314151617181920&lt;repositories&gt;      &lt;repository&gt;		&lt;id&gt;releases.asp.com&lt;/id&gt;          &lt;name&gt;releases.asp.com&lt;/name&gt;          &lt;url&gt;http://202.85.222.14:7038/repository/maven-public/&lt;/url&gt;		&lt;releases&gt;			&lt;!--true或者false表示该仓库是否为下载某种类型构件（发布版，快照版）开启。  --&gt;			&lt;enabled&gt;true&lt;/enabled&gt;			&lt;!--该元素指定更新发生的频率。Maven会比较本地POM和远程POM的时间戳。这里的选项是：always（一直），daily（默认，每日），interval：X（这里X是以分钟为单位的时间间隔），或者never（从不）。 --&gt;			&lt;updatePolicy&gt;never&lt;/updatePolicy&gt;			&lt;!--当Maven验证构件校验文件失败时该怎么做-ignore（忽略），fail（失败），或者warn（警告）。--&gt;			&lt;checksumPolicy&gt;warn&lt;/checksumPolicy&gt;		&lt;/releases&gt;		&lt;snapshots&gt;			&lt;enabled&gt;true&lt;/enabled&gt;			&lt;updatePolicy&gt;always&lt;/
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/06/29/asc20200629/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/11/wave-file-20200511/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1093,7 +1289,7 @@ More info: Deployment
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1613,7 +1809,7 @@ More info: Deployment
       else if (!isArchive && !isCategory && !isTag) { //is index page
         var titles = [] //array to titles
 
-        var postsstr = 'titles.push("伤损系统智能回放波形文件20200511升级");titles.push("ASC平台升级说明文档");titles.push("Hexo之NexT主题搭建博客详细过程");titles.push("Hello World");' //if you have a better way to get titles of posts, please change it
+        var postsstr = 'titles.push("ASC平台升级说明文档");titles.push("伤损系统智能回放波形文件20200511升级");titles.push("ASC平台升级说明文档");titles.push("Hexo之NexT主题搭建博客详细过程");titles.push("Hello World");' //if you have a better way to get titles of posts, please change it
         eval(postsstr)
 
         var promises = titles.map(function (title) {
